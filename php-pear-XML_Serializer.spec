@@ -24,7 +24,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 as XML documents. This class helps you generating any XML document you
 require without the need for DOM.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 %{_pearname} serializuje z³o¿one struktury danych takie jak tablice
