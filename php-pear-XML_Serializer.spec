@@ -1,8 +1,9 @@
 %include	/usr/lib/rpm/macros.php
-%define         _class          XML
-%define         _subclass       Serializer
+%define		_class		XML
+%define		_subclass	Serializer
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
+
 Summary:	%{_pearname} - class to build XML documents from data structures
 Summary(pl):	%{_pearname} - klasa do tworzenia dokumentów XML ze struktur danych
 Name:		php-pear-%{_pearname}
