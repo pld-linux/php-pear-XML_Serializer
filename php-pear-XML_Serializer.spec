@@ -8,13 +8,13 @@ Summary:	%{_pearname} - class to build XML documents from data structures
 Summary(pl):	%{_pearname} - klasa do tworzenia dokumentów XML ze struktur danych
 Name:		php-pear-%{_pearname}
 Version:	0.15.0
-Release:	1
+Release:	1.1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	81b7a5b6e1ac6bde8bbf396187483e81
 URL:		http://pear.php.net/package/XML_Serializer/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,18 +34,22 @@ dowolnego dokumentu XML bez potrzeby u¿ycia DOM.
 Ta klasa ma w PEAR status: %{_status}.
 
 %prep
-%setup -q -c
+%pear_package_setup
+
+install -d docs/%{_pearname}
+mv ./%{php_pear_dir}/data/%{_pearname}/doc/* docs/%{_pearname}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
-
-install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/{doc,examples}
+%doc install.log
+%doc docs/%{_pearname}/*
+%{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
