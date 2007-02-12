@@ -4,7 +4,7 @@
 %define		_status		beta
 %define		_pearname	%{_class}_%{_subclass}
 Summary:	%{_pearname} - class to build XML documents from data structures
-Summary(pl):	%{_pearname} - klasa do tworzenia dokumentÛw XML ze struktur danych
+Summary(pl.UTF-8):   %{_pearname} - klasa do tworzenia dokument√≥w XML ze struktur danych
 Name:		php-pear-%{_pearname}
 Version:	0.18.0
 Release:	3
@@ -32,10 +32,10 @@ require without the need for DOM.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-%{_pearname} serializuje z≥oøone struktury danych takie jak tablice
+%description -l pl.UTF-8
+%{_pearname} serializuje z≈Ço≈ºone struktury danych takie jak tablice
 czy obiekty jako dokumenty XML. Ta klasa pomaga w generowaniu
-dowolnego dokumentu XML bez potrzeby uøycia DOM.
+dowolnego dokumentu XML bez potrzeby u≈ºycia DOM.
 
 Ta klasa ma w PEAR status: %{_status}.
 
