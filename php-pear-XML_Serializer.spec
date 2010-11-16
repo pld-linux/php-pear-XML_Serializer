@@ -1,19 +1,17 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		XML
-%define		_subclass	Serializer
 %define		_status		beta
-%define		_pearname	%{_class}_%{_subclass}
+%define		_pearname	XML_Serializer
 Summary:	%{_pearname} - class to build XML documents from data structures
 Summary(pl.UTF-8):	%{_pearname} - klasa do tworzenia dokumentów XML ze struktur danych
 Name:		php-pear-%{_pearname}
-Version:	0.20.0
-Release:	2
+Version:	0.20.2
+Release:	1
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	ba7ff28ac7a5b44a0bd9ced2a2c2c722
+# Source0-md5:	e603e4b967510ed913f6c6b2dc59a2a1
 URL:		http://pear.php.net/package/XML_Serializer/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-common >= 3:4.2.0
@@ -72,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc install.log
 %doc docs/%{_pearname}/*
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}/*.php
+%{php_pear_dir}/XML/*.php
 
 %files tests
 %defattr(644,root,root,755)
