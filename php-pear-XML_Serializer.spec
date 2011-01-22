@@ -5,7 +5,7 @@ Summary:	%{_pearname} - class to build XML documents from data structures
 Summary(pl.UTF-8):	%{_pearname} - klasa do tworzenia dokumentów XML ze struktur danych
 Name:		php-pear-%{_pearname}
 Version:	0.20.2
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -20,6 +20,7 @@ Requires:	php-pear-PEAR-core
 Requires:	php-pear-XML_Parser >= 1.2.6
 Requires:	php-pear-XML_Util >= 1.1.1
 Requires:	php-xml
+Obsoletes:	php-pear-XML_Serializer-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,20 +37,6 @@ czy obiekty jako dokumenty XML. Ta klasa pomaga w generowaniu
 dowolnego dokumentu XML bez potrzeby użycia DOM.
 
 Ta klasa ma w PEAR status: %{_status}.
-
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoProv:	no
-AutoReq:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
@@ -70,8 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc install.log
 %doc docs/%{_pearname}/*
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/XML/*.php
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
+%{php_pear_dir}/XML/Serializer.php
+%{php_pear_dir}/XML/Unserializer.php
