@@ -4,12 +4,12 @@
 Summary:	%{_pearname} - class to build XML documents from data structures
 Summary(pl.UTF-8):	%{_pearname} - klasa do tworzenia dokumentów XML ze struktur danych
 Name:		php-pear-%{_pearname}
-Version:	0.20.2
-Release:	4
+Version:	0.21.0
+Release:	1
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	e603e4b967510ed913f6c6b2dc59a2a1
+# Source0-md5:	0a21c3327035c46284348874099185ff
 URL:		http://pear.php.net/package/XML_Serializer/
 BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -40,9 +40,6 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %pear_package_setup
-
-install -d docs/%{_pearname}
-mv ./%{php_pear_dir}/data/%{_pearname}/doc/* docs/%{_pearname}
 
 %install
 rm -rf $RPM_BUILD_ROOT
