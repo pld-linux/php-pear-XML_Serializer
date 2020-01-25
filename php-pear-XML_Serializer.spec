@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		beta
 %define		_pearname	XML_Serializer
 Summary:	%{_pearname} - class to build XML documents from data structures
